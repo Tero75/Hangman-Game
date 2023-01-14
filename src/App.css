@@ -1,38 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
+body {
+  align-items: center;
+  background-color: lightblue;
+}
+
 .App {
   text-align: center;
+  background-color:rgb(36, 19, 19);
+  font-family: 'Zen Old Mincho', serif;
+  width: fit-content;
+  height: fit-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: auto;
+  height: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game {
+  width: auto;
+  width: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.GameBox {
+  color: grey;
 }
 
-.App-link {
-  color: #61dafb;
+.titleBox {
+  color: bisque;
+  font-size: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.infobox {
+  background-color: beige;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px 15px 15px 15px;
+}
+
+button {
+  background-color:beige;
+  color: black;
+  border-color: black;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+}
+button:disabled {
+  background-color: black;
+  color: beige;
+}
+
+img {
+  width: 400px;
+  height: 600px;
 }
