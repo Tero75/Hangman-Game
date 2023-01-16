@@ -20,6 +20,7 @@ const Main = () => {
     const InitGame = ()=>{
         let RandomWord = Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)]);
         setShowElement(null);
+        setWinner(null);
         setwrongGuessCount(0);
         setCounter(1);
         setguessedChars([]);
