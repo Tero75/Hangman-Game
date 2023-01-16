@@ -13,7 +13,7 @@ const Main = () => {
     const [wrongGuessCount,setwrongGuessCount] = useState(null);
     const [showElement,setShowElement] = useState(null);
     const [counter, setCounter] = useState(1); 
-    const [characterCount, setCharacterCount] = useState(null);
+    const [winner, setWinner] = useState(null);
     /*variables-----------------------------------------------------------*/
     let title = "Hangman Word Guessing Game";      
     
@@ -31,11 +31,15 @@ const Main = () => {
         document.getElementById("button_" + userPressedChar).disabled = true;        
         setguessedChars(guessedChars+userPressedChar); 
         CheckGuess(userPressedChar);
-        setCharacterCount(toGuessChars.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map()).size)
     }
     
     const CheckGuess = (userGuess) => {
-        if(toGuessChars.includes(userGuess))//returns true or false
+        const characterCount = toGuessChars.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map()).size;
+
+        if(counter===characterCount){
+            setWinner(<GameArea  title={title} text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />);
+        }
+        else if(toGuessChars.includes(userGuess))//returns true or false
         {
             setCounter(counter+1)
         } else {
@@ -51,20 +55,21 @@ const Main = () => {
         InitGame();
     },[]);
 
-    if(wrongGuessCount < HangmanImages.length)
+    if(wrongGuessCount < HangmanImages.length & winner===null)
     {return (
         <GameArea title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
 
     )}
-    if(wrongGuessCount === HangmanImages.length){
-        return(
-        
+    else if(wrongGuessCount === HangmanImages.length){
+        return(        
             <GameArea title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
-    if (characterCount===counter){//TODO: how to know when player won?
+    else if(winner!==null){//TODO: how to know when player won?
         return(
-            <GameArea  title={title} text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <div>
+                {winner}            
+            </div>
         )
     }
 }

@@ -1,6 +1,5 @@
 const GameArea = (props) => {
     
-    console.log(props.text)
     return (
         <div className="">
             <div className="game row">
