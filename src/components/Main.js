@@ -66,7 +66,7 @@ const Main = () => {
             <GameArea title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
-    else if(winner!==null){//TODO: how to know when player won?
+    else if(winner!==null){
         return(
             <div>
                 {winner}            
