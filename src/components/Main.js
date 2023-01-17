@@ -13,18 +13,17 @@ const Main = () => {
     const [wrongGuessCount,setwrongGuessCount] = useState(null);
     const [showElement,setShowElement] = useState(null);
     const [counter, setCounter] = useState(1); 
-    const [winner, setWinner] = useState(null);
+    const [winner, setWinner] = useState(false);
     /*variables-----------------------------------------------------------*/
     let title = "Hangman Word Guessing Game";      
     
     const InitGame = ()=>{
-        let RandomWord = Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)]);
+        settoGuessChars(Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)]));
         setShowElement(null);
-        setWinner(null);
+        setWinner(false);
         setwrongGuessCount(0);
         setCounter(1);
         setguessedChars([]);
-        settoGuessChars(RandomWord);
         
     }
     
@@ -38,7 +37,7 @@ const Main = () => {
         const characterCount = toGuessChars.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map()).size;
 
         if(counter===characterCount){
-            setWinner(<GameArea  title={title} text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />);
+            setWinner(true);
         }
         else if(toGuessChars.includes(userGuess))//returns true or false
         {
@@ -56,7 +55,7 @@ const Main = () => {
         InitGame();
     },[]);
 
-    if(wrongGuessCount < HangmanImages.length & winner===null)
+    if(wrongGuessCount < HangmanImages.length & winner===false)
     {return (
         <GameArea title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
 
@@ -66,11 +65,10 @@ const Main = () => {
             <GameArea title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
-    else if(winner!==null){
+    //else if(winner===true)
+    else {
         return(
-            <div>
-                {winner}            
-            </div>
+            <GameArea  showElement={showElement} title={title} text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
 }
