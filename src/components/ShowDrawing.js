@@ -1,8 +1,8 @@
-const ShowDrawing = (props) => {
+const ShowDrawing = ({HangmanImages,drawingIndex}) => {
 
     return (
         <div>
-            <img src={props.HangmanImages[props.drawingIndex]}/>
+            <img src={HangmanImages[drawingIndex]}/>
         </div>
     )
 }

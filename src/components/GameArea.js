@@ -1,4 +1,4 @@
-const GameArea = (props) => {
+const GameArea = ({title,showElement,text,ShowWord,Keyboard,button}) => {
     
     return (
         <div className="">
@@ -8,14 +8,14 @@ const GameArea = (props) => {
                 </div>
                 <div className="GameBox col-8">
                     <div className="titleBox row">
-                        <h1>{props.title}</h1>
+                        <h1>{title}</h1>
                     </div>                    
                     <div className="imageBox row">
-                        {props.showElement}
-                        {props.text}
-                        {props.ShowWord}
-                        {props.Keyboard}
-                        {props.button}
+                        {showElement}
+                        {text}
+                        {ShowWord}
+                        {Keyboard}
+                        {button}
                     </div>
                 </div>
             </div>
