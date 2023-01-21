@@ -1,7 +1,7 @@
-const ShowWord = (props) => {  
+const ShowWord = ({toGuessChars,guessedChars}) => {  
     
 
-    let SecretWord = props.toGuessChars.map((letter) => (props.guessedChars.includes(letter)? letter: "*"));
+    let SecretWord = toGuessChars.map((letter) => (guessedChars.includes(letter)? letter: "*"));
     
     return (
         <div key={SecretWord.join("")}>

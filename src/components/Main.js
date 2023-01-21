@@ -38,9 +38,7 @@ const Main = () => {
 
         if(counter===characterCount){
             setWinner(true);
-        }
-        else if(toGuessChars.includes(userGuess))//returns true or false
-        {
+        } else if(toGuessChars.includes(userGuess))/*returns true or false*/ {
             setCounter(counter+1)
         } else {
             setwrongGuessCount(wrongGuessCount+1);         
@@ -65,10 +63,9 @@ const Main = () => {
             <GameArea title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
-    //else if(winner===true)
     else {
         return(
-            <GameArea  showElement={showElement} title={title} text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <GameArea  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
 }
