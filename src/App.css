@@ -2,12 +2,13 @@
 
 body {
   align-items: center;
-  background-color: lightblue;
+  background-color: white;
 }
 
 .App {
   text-align: center;
-  background-color:rgb(36, 19, 19);
+  background-color: grey;
+  box-shadow: 5px 5px 5px;
   font-family: 'Zen Old Mincho', serif;
   width: fit-content;
   height: fit-content;
@@ -24,33 +25,33 @@ body {
 }
 
 .GameBox {
-  color: grey;
+  background-color: gey;
+  color: black;
 }
 
 .titleBox {
-  color: bisque;
+  color: black;
   font-size: 60px;
 }
 
 .infobox {
-  background-color: beige;
+  background-color: lightblue;
   color: black;
   font-family: 'Times New Roman', Times, serif;
   border-color: black;
   border-style: solid;
-  border-radius: 15px 15px 15px 15px;
 }
 
 button {
   background-color:beige;
   color: black;
-  border-color: black;
+  box-shadow: 2px 2px 2px;
   border-style: solid;
   border-radius: 3px 3px 3px 3px;
 }
 button:disabled {
-  background-color: black;
-  color: beige;
+  background-color: grey;
+  color: white;
 }
 
 img {

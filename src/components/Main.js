@@ -1,7 +1,7 @@
 import ShowDrawing from './ShowDrawing'
 import ShowWord from './ShowWord'
 import Keyboard from './Keyboard'
-import GameArea from './GameArea'
+import UserInterface from './UserInterface'
 import RandomWords from './data/RandomWords.json'
 import HangmanImages from './data/HangmanImages.json'
 import { useState, useEffect } from 'react';
@@ -28,7 +28,7 @@ const Main = () => {
     }
     
     const CharacterPressed = (userPressedChar) => {
-        document.getElementById("button_" + userPressedChar).disabled = true;        
+        document.getElementById("button_" + userPressedChar).disabled = "true";        
         setguessedChars(guessedChars+userPressedChar); 
         CheckGuess(userPressedChar);
     }
@@ -55,17 +55,17 @@ const Main = () => {
 
     if(wrongGuessCount < HangmanImages.length & winner===false)
     {return (
-        <GameArea title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
+        <UserInterface title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
 
     )}
     else if(wrongGuessCount === HangmanImages.length){
         return(        
-            <GameArea title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
     else {
         return(
-            <GameArea  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
         )
     }
 }
