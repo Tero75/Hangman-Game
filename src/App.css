@@ -25,7 +25,7 @@ body {
 }
 
 .GameBox {
-  background-color: gey;
+  background-color: grey;
   color: black;
 }
 
@@ -52,6 +52,14 @@ button {
 button:disabled {
   background-color: grey;
   color: white;
+}
+
+.resetButton {
+  background-color: black;
+  color: bisque;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px 50px 50px 50px;
 }
 
 img {

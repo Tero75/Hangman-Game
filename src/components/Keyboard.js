@@ -4,7 +4,7 @@ const Keyboard = ({CharacterPressed}) => {
     let keyboardButtons = keyboardLetters.map(char => <button id={"button_"+ char} onClick={CharacterPressed.bind(this, char)}>{char}</button>);
     
     return (
-        <div key={""}>
+        <div key={keyboardButtons.toString()}>
          {keyboardButtons} 
         </div>
     );

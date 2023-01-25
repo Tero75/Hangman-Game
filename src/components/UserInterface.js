@@ -1,4 +1,4 @@
-const GameArea = ({title,showElement,text,ShowWord,Keyboard,button}) => {
+const UserInterface = ({title,showElement,text,ShowWord,Keyboard,button}) => {
     
     return (
         <div className="">
@@ -22,4 +22,4 @@ const GameArea = ({title,showElement,text,ShowWord,Keyboard,button}) => {
         </div>
     )
 }
-export default GameArea;
+export default UserInterface;

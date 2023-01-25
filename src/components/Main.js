@@ -28,7 +28,7 @@ const Main = () => {
     }
     
     const CharacterPressed = (userPressedChar) => {
-        document.getElementById("button_" + userPressedChar).disabled = "true";        
+        document.getElementById("button_" + userPressedChar).disabled = true;        
         setguessedChars(guessedChars+userPressedChar); 
         CheckGuess(userPressedChar);
     }
@@ -60,12 +60,12 @@ const Main = () => {
     )}
     else if(wrongGuessCount === HangmanImages.length){
         return(        
-            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>restart</button>} />
         )
     }
     else {
         return(
-            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button onClick={InitGame}>restart</button>} />
+            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>restart</button>} />
         )
     }
 }
