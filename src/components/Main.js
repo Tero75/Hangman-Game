@@ -4,7 +4,7 @@ import Keyboard from './Keyboard'
 import UserInterface from './UserInterface'
 import RandomWords from './data/RandomWords.json'
 import HangmanImages from './data/HangmanImages.json'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useId } from 'react';
 
 const Main = () => {
     /*useStates----------------------------------------------------------*/
@@ -15,7 +15,7 @@ const Main = () => {
     const [counter, setCounter] = useState(1); 
     const [winner, setWinner] = useState(false);
     /*variables-----------------------------------------------------------*/
-    let title = "Hangman Word Guessing Game";      
+    let title = "Hangman Word Guessing Game";  
     
     const InitGame = ()=>{
         settoGuessChars(Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)]));
@@ -60,12 +60,12 @@ const Main = () => {
     )}
     else if(wrongGuessCount === HangmanImages.length){
         return(        
-            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>restart</button>} />
+            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
         )
     }
     else {
         return(
-            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>restart</button>} />
+            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
         )
     }
 }

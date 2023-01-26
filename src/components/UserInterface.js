@@ -15,7 +15,9 @@ const UserInterface = ({title,showElement,text,ShowWord,Keyboard,button}) => {
                         {text}
                         {ShowWord}
                         {Keyboard}
-                        {button}
+                        <div className="d-flex justify-content-center">
+                            {button}
+                        </div>
                     </div>
                 </div>
             </div>
