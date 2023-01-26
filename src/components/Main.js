@@ -4,7 +4,7 @@ import Keyboard from './Keyboard'
 import UserInterface from './UserInterface'
 import RandomWords from './data/RandomWords.json'
 import HangmanImages from './data/HangmanImages.json'
-import { useState, useEffect, useId } from 'react';
+import { useState, useEffect} from 'react';
 
 const Main = () => {
     /*useStates----------------------------------------------------------*/
