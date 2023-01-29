@@ -10,14 +10,12 @@ const UserInterface = ({title,showElement,text,ShowWord,Keyboard,button}) => {
                     <div className="titleBox row">
                         <h1>{title}</h1>
                     </div>                    
-                    <div className="imageBox row">
+                    <div className="justify-content-center imageBox row">
                         {showElement}
                         {text}
                         {ShowWord}
                         {Keyboard}
-                        <div className="d-flex justify-content-center">
-                            {button}
-                        </div>
+                        {button}
                     </div>
                 </div>
             </div>

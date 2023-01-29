@@ -65,7 +65,7 @@ const Main = () => {
     }
     else {
         return(
-            <UserInterface  showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
+            <UserInterface  title={title} showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
         )
     }
 }

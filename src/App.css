@@ -10,8 +10,9 @@ body {
   background-color: grey;
   box-shadow: 5px 5px 5px;
   font-family: 'Zen Old Mincho', serif;
-  width: fit-content;
-  height: fit-content;
+  font-size: calc(25px + 0.390625vw);
+  width: 90vw;
+  height: auto;
 }
 
 .container {
@@ -21,38 +22,44 @@ body {
 
 .game {
   width: auto;
-  width: 100vh;
+  height: auto;
 }
 
 .GameBox {
-  background-color: grey;
-  color: black;;
+  width: 60vw ;
+  height:auto;
 }
 
-.titleBox {
-  color: black;
-  font-size: 60px;
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
 .infobox {
   background-color: lightblue;
   color: black;
   font-family: 'Times New Roman', Times, serif;
+  font-size: 1.0rem;
+  text-align: start;
 }
 
 button {
   background-color:black;
   color: beige;
+  font-size: 1.0rem;
   border-radius: 3px 3px 3px 3px;
 }
 button:disabled {
   background-color: beige;
   color: black;
+  font-size: 1.0rem;
 }
 
 .resetButton {
   background-color: black;
   color: bisque;
+  font-size: 1.2rem;
   border-color: beige;
   border-style: solid;
   width: 100px;
@@ -61,7 +68,6 @@ button:disabled {
 }
 
 img {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
+  width: 40vw;
+  height: auto;
 }
