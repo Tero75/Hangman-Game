@@ -2,7 +2,7 @@
 
 body {
   padding: 10px;
-  background-color: white;
+  background-color: lightblue;
 }
 
 .App {
@@ -27,7 +27,7 @@ h1 {
 }
 
 .infobox {
-  background-color: lightblue;
+  background-color: lightyellow;
   color: black;
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.0rem;

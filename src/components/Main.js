@@ -44,29 +44,17 @@ const Main = () => {
             setwrongGuessCount(wrongGuessCount+1);         
             setShowElement(<ShowDrawing drawingIndex={wrongGuessCount} HangmanImages={HangmanImages}/>)
         }        
-    }
-    
+    }    
 
-    useEffect( () => {
-        
+    useEffect( () => {        
         console.log("Page has loaded");
         InitGame();
     },[]);
 
-    if(wrongGuessCount < HangmanImages.length & winner===false)
-    {return (
-        <UserInterface title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
-
-    )}
-    else if(wrongGuessCount === HangmanImages.length){
-        return(        
-            <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
-        )
-    }
-    else {
-        return(
-            <UserInterface  title={title} showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
-        )
-    }
+    return(
+        (wrongGuessCount < HangmanImages.length & winner===false)? <UserInterface title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
+        :(wrongGuessCount === HangmanImages.length)? <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
+        : <UserInterface  title={title} showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
+    )    
 }
 export default Main;
