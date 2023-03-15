@@ -6,6 +6,7 @@ body {
 }
 
 .App {
+  max-width: 760px;
   text-align: center;
   background-color: yellowgreen;
   box-shadow: 5px 5px 5px;
