@@ -1,10 +1,18 @@
 [
-    "TARTTUVUUSLUKU",
-    "TYÖLLISYYSLUKU",
-    "UKKOMETSO",
-    "TUKKIJÄÄRÄ",
-    "AUTIOTALO",
-    "PÖLLÖ",
-    "HAUKKA",
-    "KURKI"
+    "tarttuvuusluku",
+    "työllisyysluku",
+    "ukkometso",
+    "tukkijäärä",
+    "autiotalo",
+    "pöllö",
+    "haukka",
+    "kurki",
+    "talitiainen",
+    "puheenjohtaja",
+    "toimitusjohtaja",
+    "hömötiainen",
+    "hukkakaura",
+    "puhelinmyyjä",
+    "tukkimies",
+    "asiakaspalvelija"
 ]

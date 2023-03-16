@@ -18,13 +18,12 @@ const Main = () => {
     let title = "Hangman Word Guessing Game";  
     
     const InitGame = ()=>{
-        settoGuessChars(Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)]));
+        settoGuessChars(Array.from(RandomWords[Math.floor(Math.random() * RandomWords.length)].toLowerCase()));
         setShowElement(null);
         setWinner(false);
         setwrongGuessCount(0);
         setCounter(1);
         setguessedChars([]);
-        
     }
     
     const CharacterPressed = (userPressedChar) => {
