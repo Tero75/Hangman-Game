@@ -1,7 +1,27 @@
+
 [
-    "./images/hangman01.png",
-    "./images/hangman02.png",
-    "./images/hangman03.png",
-    "./images/hangman04.png",
-    "./images/hangman05.png"
+    {
+        "SRC":"./images/hangman01.png",
+        "ALT":"One mistake. Three more tries left"
+    }, 
+
+    {
+        "SRC":"./images/hangman02.png",
+        "ALT":"Two mistakes. Two tries left"
+    },
+
+    {
+        "SRC":"./images/hangman03.png",
+        "ALT":"Three mistakes. One more try left"
+    },
+
+    {
+        "SRC":"./images/hangman04.png",
+        "ALT":"Four mistakes. You can't make mistakes anymore!"
+    },
+
+    {
+        "SRC":"./images/hangman05.png",
+        "ALT":"YOUR HANGED!"
+    }
 ]
