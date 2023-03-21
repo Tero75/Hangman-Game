@@ -33,7 +33,7 @@ const Main = () => {
     }
     
     const CheckGuess = (userGuess) => {
-        const characterCount = toGuessChars.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map()).size;
+        const characterCount = [...new Set(toGuessChars)].length;
 
         if(counter===characterCount){
             setWinner(true);
