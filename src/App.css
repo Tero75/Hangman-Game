@@ -1,72 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
 
 body {
-  padding: 10px;
-  background-color: lightblue;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.App {
-  max-width: 760px;
   text-align: center;
-  background-color: yellowgreen;
-  box-shadow: 5px 5px 5px;
+  color: white;
   font-family: 'Zen Old Mincho', serif;
-  font-size: calc(25px + 0.390625vw);
-  border-color: red;
-  border-style: solid;
-  border-width: 5px;
-  border-radius: 5px 5px 5px 5px;
+  background-color: rgb(129, 182, 238);
 }
-
-.GameBox {
-  height:auto;
-}
-
 h1 {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 5vh;
 }
-
-.infobox {
-  background-color: lightyellow;
-  color: black;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.0rem;
-  border-color: red;
-  border-style: solid;
-  border-width: 5px;
-}
-
 button {
-  background-color:black;
-  color: beige;
+  background-color: lightblue;
+  color: rgb(56, 143, 236);
+  font-size: 5vh;
   border-style: solid;
-  font-size: 1.2rem;
+  border-color: rgb(56, 143, 236);
   border-radius: 3px 3px 3px 3px;
 }
 button:disabled {
   background-color: beige;
-  color: black;
+  color: rgb(56, 143, 236);
 }
-
 .resetButton {
-  width: 100px;
-  height: 100px;
+  width: 20vh;
+  height: 20vh;
+  font-size: 5vh;
   border-radius: 50%;
 }
-
-.imageBox {
-  justify-content: center;
-}
-
 img {
-  width: 60vw;
-  height: auto;
+  width: auto;
+  height: 50vh;
   max-width: 400px;
   max-height: 600px;
 }

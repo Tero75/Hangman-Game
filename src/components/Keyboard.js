@@ -1,7 +1,6 @@
-import KeyboardKeys from './data/KeyboardKeys.json'
 const Keyboard = ({CharacterPressed}) => {
-            
-    let keyboardButtons = KeyboardKeys.FI_SWE.map(char => <button id={"button_"+ char} key={char} onClick={CharacterPressed.bind(this, char)}>{char}</button>);
+    let FI_SWE = ["q","w","e","r","t","y","u","i","o","p","å","a","s","d","f","g","h","j","k","l","ö","ä","z","x","c","v","b","n","m"]      
+    let keyboardButtons = FI_SWE.map(char => <button id={"button_"+ char} key={char} onClick={CharacterPressed.bind(this, char)}>{char}</button>);
 
     return (
         <div>

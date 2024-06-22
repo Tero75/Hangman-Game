@@ -1,7 +1,6 @@
 import ShowDrawing from './ShowDrawing'
 import ShowWord from './ShowWord'
 import Keyboard from './Keyboard'
-import UserInterface from './UserInterface'
 import RandomWords from './data/RandomWords.json'
 import HangmanImages from './data/HangmanImages.json'
 import { useState, useEffect} from 'react';
@@ -34,8 +33,7 @@ const Main = () => {
     
     const CheckGuess = (userGuess) => {
         const characterCount = new Set(toGuessChars).size;//individual characters count from toGUessChars array
-        //console.log(toGuessChars)
-        //console.log(characterCount)
+
 
         if(counter===characterCount){
             setWinner(true);
@@ -52,15 +50,14 @@ const Main = () => {
         InitGame();
     },[]);
    
-        if(wrongGuessCount < HangmanImages.length & winner===false) { //if your have guesses left
-            return <UserInterface title={title} showElement={showElement} ShowWord={<ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>} Keyboard={<Keyboard CharacterPressed={CharacterPressed}/>}/>
-        }
-        else if(wrongGuessCount === HangmanImages.length) { // YOUR HANGED!!
-            return <UserInterface title={title} showElement={showElement} text={<h1>LOOSER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
-        }
-        else { // present play again button
-            return <UserInterface  title={title} showElement={showElement}  text={<h1>WINNER!!!!</h1>} button={<button className='resetButton' onClick={InitGame}>Play Again!</button>} />
-        }
-
+    return (
+    <div>
+        <h1>{title}</h1>
+        {showElement}        
+        <ShowWord toGuessChars={toGuessChars} guessedChars={guessedChars}/>
+        {(wrongGuessCount < HangmanImages.length && winner === false)?<Keyboard CharacterPressed={CharacterPressed}/>
+        :<button className="resetButton" onClick={InitGame}>Play Again!</button>}
+    </div>
+    );
 }
 export default Main;
